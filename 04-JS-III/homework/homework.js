@@ -145,7 +145,7 @@ function diaDeLaSemana(numeroDeDia) {
   //si el día corresponde a Sábado o Domingo y “Es dia Laboral” en caso contrario. 
   //Escribe tu código aquí   
   if (numeroDeDia === 1 || numeroDeDia ===7 ) return "Es fin de semana";
-  return "Es dia Laboral"
+  return "Es dia Laboral";
   } 
 
 
@@ -153,7 +153,12 @@ function empiezaConNueve(n) {
   //Desarrolle una función que recibe como parámetro un número entero n. Debe retornar true si el entero 
   //inicia con 9 y false en otro caso.
   //Escribe tu código aquí
-  
+  var nstr = n.toString ()
+  if (nstr.charAt(0) === '9') {
+    return true;
+  } else {
+    return false
+  }
 }
 
 
@@ -204,7 +209,20 @@ function breakStatement(numero) {
   //devolver: "Se interrumpió la ejecución"
   //Pista: usá el statement 'break'
   // Tu código:
-  
+  var array = [];
+  var nnum = numero;
+  var sum = 0;
+  for (var i = 0; i < 10; i++) {
+    nnum = nnum + 2;
+    array.push(nnum);
+    sum = sum + array[i];
+    if (array.length === sum) break;
+  }
+  if (array.length === sum) {
+    return 'Se interrumpió la ejecución';
+  } else {
+  return array;
+  }
 }
 
 
@@ -215,6 +233,17 @@ function continueStatement(numero) {
   //Cuando el número de iteraciones alcance el valor 5, no se suma en ese caso y se continua con la siguiente iteración
   //Pista: usá el statement 'continue'
   // Tu código:
+  var array = [];
+  var nnum = numero;
+  for (var i = 0; i < 10; i++) {
+    if (i === 5) continue;
+    else {
+    nnum = nnum + 2;
+    array.push(nnum);
+    ;
+  }
+  }
+  return array;
 }
 
 
