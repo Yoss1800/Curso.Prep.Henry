@@ -90,8 +90,14 @@ function agregarNumeros(numeros) {
 
 function promedioResultadosTest(resultadosTest) {
   // "resultadosTest" debe ser una matriz de enteros (int/integers)
-  // Itera (en un bucle) los elementos del array, calcula y devuelve el promedio de puntajes
+  // Itera (en un bucle) los elementos del array, calcula y devuelve 
+  // el promedio de puntajes
   // Tu código:
+  var sum = 0;
+  for (i = 0; i < resultadosTest.length; i++) {
+    sum = (sum + resultadosTest[i]);
+  }
+  return sum / resultadosTest.length;
 }
 
 
@@ -99,6 +105,13 @@ function numeroMasGrande(numeros) {
   // "numeros" debe ser una matriz de enteros (int/integers)
   // Devuelve el número más grande
   // Tu código:
+  var big = numeros[0]
+  for (i = 1; i < numeros.length; i++) {
+   if (numeros[i] > big) {
+    big = numeros[i]
+   }
+  }
+  return big
 }
 
 
@@ -106,13 +119,23 @@ function multiplicarArgumentos() {
   // Usa la palabra clave `arguments` para multiplicar todos los argumentos y devolver el producto
   // Si no se pasan argumentos devuelve 0. Si se pasa un argumento, simplemente devuélvelo
   // Escribe tu código aquí:
+  if (arguments.length < 1) return 0;
+  var mult = 1;
+  for (var i = 0; i < arguments.length; i++) {
+  mult = mult * arguments[i];
+  }  
+  return mult;
 }
 
 
 function cuentoElementos(arreglo){
   //Realiza una función que retorne la cantidad de los elementos del arreglo cuyo valor es mayor a 18.
   //Escribe tu código aquí
-
+  var cant = 0;
+  for (var i = 0; i < arreglo.length; i++) {
+    if (arreglo[i] > 18) cant = cant + 1;
+  }
+  return cant;
 }
 
 
@@ -121,8 +144,9 @@ function diaDeLaSemana(numeroDeDia) {
   //Realiza una función que dado el número del día de la semana, retorne: Es fin de semana
   //si el día corresponde a Sábado o Domingo y “Es dia Laboral” en caso contrario. 
   //Escribe tu código aquí   
-  
-} 
+  if (numeroDeDia === 1 || numeroDeDia ===7 ) return "Es fin de semana";
+  return "Es dia Laboral"
+  } 
 
 
 function empiezaConNueve(n) {
@@ -136,8 +160,12 @@ function empiezaConNueve(n) {
 function todosIguales(arreglo) {
   //Escriba la función todosIguales, que indique si todos los elementos de un arreglo son iguales:
   //retornar true, caso contrario retornar false.
-  //Escribe tu código aquí  
-  
+  //Escribe tu código aquí 
+  var last = arreglo.length - 1
+  for (var i = 1; i < arreglo.length; i++) {
+  if (arreglo[0] === arreglo[i] && arreglo[0] === arreglo[last]) return true;
+  }
+  return false; 
 } 
 
 
@@ -145,9 +173,6 @@ function mesesDelAño(array) {
   //Dado un array que contiene algunos meses del año desordenados, recorrer el array buscando los meses de 
   // "Enero", "Marzo" y "Noviembre", guardarlo en nuevo array y retornarlo.
   //Si alguno de los meses no está, devolver: "No se encontraron los meses pedidos"
-  // Tu código:
-}
-
 
 function mayorACien(array) {
   //La función recibe un array con enteros entre 0 y 200. Recorrer el array y guardar en un nuevo array sólo los
